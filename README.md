@@ -2,14 +2,14 @@
 Author: Mark Bauer
 
 # Overview
-This repository demonstrates how to download and work with the National Flood Insurance Program (NFIP) [datasets](https://www.fema.gov/about/openfema/data-sets#nfip) from [OpenFEMA](https://www.fema.gov/about/reports-and-data/openfema). The workflows use the Python programming language and are sdesigned to be efficient, easy to adapt, and easy to understand. These examples also include brief data exploration using [DuckDB](https://duckdb.org/).
+This repository demonstrates how to download and work with the National Flood Insurance Program (NFIP) [datasets](https://www.fema.gov/about/openfema/data-sets#nfip) from [OpenFEMA](https://www.fema.gov/about/reports-and-data/openfema). The workflows use the Python programming language and are designed to be efficient, easy to adapt, and easy to understand. These examples also include brief data exploration using [DuckDB](https://duckdb.org/).
 
 The tutorial can be found in the [download-examples](https://github.com/mebauer/nfip-datasets/blob/main/download-examples.ipynb) notebook.
 
 Notes:  
 - Datasets are downloaded in Parquet format whenever possible for performance and compatibility.
 - DuckDB is used for querying and previewing the data.
-- The NFIP Community Layers dataset is large and has been excluded from this repository (tracked via .gitignore), but other datasets are included both locally and on GitHub.
+- The NFIP Community Layers datasets are large and have been excluded from this repository (tracked via .gitignore), but other datasets are included both locally and on GitHub.
 - For the NFIP Policies and Claims datasets, the current focus is on a sample of New York City.
 
 # Disclaimer
