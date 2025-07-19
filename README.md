@@ -1,7 +1,10 @@
-# How to Effectively Download NFIP Datasets from OpenFEMA
+# 📥 Download NFIP Datasets with OpenFEMA API
 Author: Mark Bauer
 
-# Overview
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
+
+# 📌 Overview
 This repository demonstrates how to download and work with the National Flood Insurance Program (NFIP) [datasets](https://www.fema.gov/about/openfema/data-sets#nfip) from [OpenFEMA](https://www.fema.gov/about/reports-and-data/openfema). The workflows use the Python programming language and are designed to be efficient, easy to adapt, and easy to understand. These examples also include brief data exploration using [DuckDB](https://duckdb.org/).
 
 The tutorial can be found in the [download-examples](https://github.com/mebauer/nfip-datasets/blob/main/download-examples.ipynb) notebook.
@@ -12,18 +15,18 @@ Notes:
 - The NFIP Community Layers datasets are large and have been excluded from this repository (tracked via .gitignore), but other datasets are included both locally and on GitHub.
 - For the NFIP Policies and Claims datasets, the current focus is on a sample of New York City.
 
-# Disclaimer
+# ⚠️ Disclaimer
 This tutorial uses the Federal Emergency Management Agency’s OpenFEMA API, but is not endorsed by FEMA. The Federal Government or FEMA cannot vouch for the data or analyses derived from these data after the data have been retrieved from the Agency's website(s).
 
 Read more about OpenFEMA's [Terms and Conditions](https://www.fema.gov/about/openfema/terms-conditions).
 
-# OpenFEMA API and the NFIP Claims and Policies Datasets
+# 🌊 OpenFEMA API and the NFIP Claims and Policies Datasets
 The NFIP Claims and Policies datasets are among the most widely used resources provided by OpenFEMA. However, these files are often very large, and bulk downloads can require significant storage and processing time.
 
 If you're only interested in a few counties, it's more efficient to use the OpenFEMA API to retrieve just the data you need. The snippet below shows a simplified version of a function that fetches paginated NFIP data for a given county using the OpenFEMA API.
 
 <details>
-<summary>Here's a snippet of: <code>fetch_nfip_data()</code> Expand arrow.</summary>
+<summary>📄 Expand to see a preview of <code>fetch_nfip_data()</code></summary>
 
 ```python
 # constants
@@ -108,7 +111,7 @@ for fips in fips_list:
 
 Refer to the full function inside the [download-examples](https://github.com/mebauer/nfip-datasets/blob/main/download-examples.ipynb) notebook. Note: We download data as Parquet files for performance. With DuckDB, these can easily be converted to CSV.
 
-# Datasets
+# 📂 Available Datasets
 - [FIMA NFIP Redacted Claims - v2](https://www.fema.gov/openfema-data-page/fima-nfip-redacted-claims-v2)
 - [FIMA NFIP Redacted Policies - v2](https://www.fema.gov/openfema-data-page/fima-nfip-redacted-policies-v2)
 - [NFIP Multiple Loss Properties - v1](https://www.fema.gov/openfema-data-page/nfip-multiple-loss-properties-v1)
@@ -119,7 +122,7 @@ Refer to the full function inside the [download-examples](https://github.com/meb
 - [NFIP Community Layer No Overlaps Whole - v1](https://www.fema.gov/openfema-data-page/nfip-community-layer-no-overlaps-whole-v1)
 - [NFIP Community Status Book - v1](https://www.fema.gov/openfema-data-page/nfip-community-status-book-v1)
    
-# Additional Resources
+# 📚 Additional Resources
 - [OpenFEMA](https://www.fema.gov/about/reports-and-data/openfema)
 - [OpenFEMA Datasets](https://www.fema.gov/about/openfema/data-sets)
 - [OpenFEMA National Flood Insurance Program Datasets](https://www.fema.gov/about/openfema/data-sets#nfip)
@@ -127,7 +130,7 @@ Refer to the full function inside the [download-examples](https://github.com/meb
 - [OpenFEMA Developer Resources](https://www.fema.gov/about/openfema/developer-resources)
 - [OpenFEMA Guide to Working with Large Data Sets](https://www.fema.gov/about/openfema/working-with-large-data-sets)
 
-# Say Hello!
+# 👋 Stay in Touch
 Feel free to reach out.
 - LinkedIn: [markebauer](https://www.linkedin.com/in/markebauer/)   
 - Portfolio: [mebauer.github.io](https://mebauer.github.io/)
