@@ -2,7 +2,6 @@
 Author: Mark Bauer
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
 
 # 📌 Overview
 This repository demonstrates how to download and work with the National Flood Insurance Program (NFIP) [datasets](https://www.fema.gov/about/openfema/data-sets#nfip) from [OpenFEMA](https://www.fema.gov/about/reports-and-data/openfema). The workflows use the Python programming language and are designed to be efficient, easy to adapt, and easy to understand. These examples also include brief data exploration using [DuckDB](https://duckdb.org/).
