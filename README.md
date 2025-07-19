@@ -6,23 +6,23 @@ Author: Mark Bauer
 # 📌 Overview
 This repository demonstrates how to download and work with the National Flood Insurance Program (NFIP) [datasets](https://www.fema.gov/about/openfema/data-sets#nfip) from [OpenFEMA](https://www.fema.gov/about/reports-and-data/openfema). The workflows use the Python programming language and are designed to be efficient, easy to adapt, and easy to understand. These examples also include brief data exploration using [DuckDB](https://duckdb.org/).
 
-The tutorial can be found in the [download-examples](https://github.com/mebauer/nfip-datasets/blob/main/download-examples.ipynb) notebook.
+📥 The tutorial can be found in the [download-examples](https://github.com/mebauer/nfip-datasets/blob/main/download-examples.ipynb) notebook.
 
 Notes:  
-- Datasets are downloaded in Parquet format whenever possible for performance and compatibility.
-- DuckDB is used for querying and previewing the data.
-- The NFIP Community Layers datasets are large and have been excluded from this repository (tracked via .gitignore), but other datasets are included both locally and on GitHub.
-- For the NFIP Policies and Claims datasets, the current focus is on a sample of New York City.
+- 📦 Datasets are downloaded in Parquet format whenever possible for performance and compatibility.
+- 🐤 DuckDB is used for querying and previewing the data.
+- 🚫 The NFIP Community Layers datasets are large and have been excluded from this repository (tracked via .gitignore), but other datasets are included both locally and on GitHub.
+- 🗽 For the NFIP Policies and Claims datasets, the current focus is on a sample of New York City.
 
 # ⚠️ Disclaimer
 This tutorial uses the Federal Emergency Management Agency’s OpenFEMA API, but is not endorsed by FEMA. The Federal Government or FEMA cannot vouch for the data or analyses derived from these data after the data have been retrieved from the Agency's website(s).
 
-Read more about OpenFEMA's [Terms and Conditions](https://www.fema.gov/about/openfema/terms-conditions).
+⚖️ Read more about OpenFEMA's [Terms and Conditions](https://www.fema.gov/about/openfema/terms-conditions).
 
 # 🌊 OpenFEMA API and the NFIP Claims and Policies Datasets
 The NFIP Claims and Policies datasets are among the most widely used resources provided by OpenFEMA. However, these files are often very large, and bulk downloads can require significant storage and processing time.
 
-If you're only interested in a few counties, it's more efficient to use the OpenFEMA API to retrieve just the data you need. The snippet below shows a simplified version of a function that fetches paginated NFIP data for a given county using the OpenFEMA API.
+🎯 If you're only interested in a few counties, it's more efficient to use the OpenFEMA API to retrieve just the data you need. The snippet below shows a simplified version of a function that fetches paginated NFIP data for a given county using the OpenFEMA API.
 
 <details>
 <summary>📄 Expand to see a preview of <code>fetch_nfip_data()</code></summary>
@@ -83,7 +83,7 @@ def fetch_nfip_data(dataset, fips, outpath=".", sleep_secs=2.0):
 
 To download data, simply call the `fetch_nfip_data()` function and pass in your desired county FIPS codes.
 
-The example below downloads NFIP **Claims** data for the five counties that make up New York City:
+The example below downloads NFIP **Claims** data for the five counties that make up 🗽 New York City:
 
 ```python
 # specify Couny FIPS codes
@@ -108,7 +108,9 @@ for fips in fips_list:
     fetch_nfip_data(dataset, fips, outpath)
 ```
 
-Refer to the full function inside the [download-examples](https://github.com/mebauer/nfip-datasets/blob/main/download-examples.ipynb) notebook. Note: We download data as Parquet files for performance. With DuckDB, these can easily be converted to CSV. Please refer to the [parquet-to-csv](https://github.com/mebauer/nfip-datasets/blob/main/parquet-to-csv.ipynb) notebook.
+🔧 Refer to the full function inside the [download-examples](https://github.com/mebauer/nfip-datasets/blob/main/download-examples.ipynb) notebook. Note: We download data as Parquet files for performance. With DuckDB, these can easily be converted to CSV. Please refer to the [parquet-to-csv](https://github.com/mebauer/nfip-datasets/blob/main/parquet-to-csv.ipynb) notebook.
+
+🗺️ If you're interested in analyzing data at the national scale, check out my project, [Analyzing FEMA's National Flood Insurance Program (NFIP) Data With DuckDB](https://github.com/mebauer/duckdb-fema-nfip). That example demonstrates how to download the full dataset as a Parquet file and efficiently query it using DuckDB.
 
 # 📂 Available Datasets
 - [FIMA NFIP Redacted Claims - v2](https://www.fema.gov/openfema-data-page/fima-nfip-redacted-claims-v2)
