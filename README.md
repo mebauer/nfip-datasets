@@ -79,7 +79,34 @@ def fetch_nfip_data(dataset, fips, outpath=".", sleep_secs=2.0):
 ```
 </details>
 
-Refer to the full function inside the [download-examples](https://github.com/mebauer/nfip-datasets/blob/main/download-examples.ipynb) notebook.
+To download data, simply call the `fetch_nfip_data()` function and pass in your desired county FIPS codes.
+
+The example below downloads NFIP **Claims** data for the five counties that make up New York City:
+
+```python
+# specify Couny FIPS codes
+fips_list = [
+    "36005", # Bronx
+    "36047", # Kings (Brooklyn)
+    "36061", # New York (Manhattan)
+    "36081", # Queens
+    "36085" # Richmond (Staten Island)
+]
+
+# Claims or Policies
+dataset = "Claims"
+
+# specify outpath
+outpath = "data/"
+
+# loop over County FIPS codes
+for fips in fips_list:
+    
+    # pass variables to function
+    fetch_nfip_data(dataset, fips, outpath)
+```
+
+Refer to the full function inside the [download-examples](https://github.com/mebauer/nfip-datasets/blob/main/download-examples.ipynb) notebook. Note: We download data as Parquet files for performance. With DuckDB, these can easily be converted to CSV.
 
 # Datasets
 - [FIMA NFIP Redacted Claims - v2](https://www.fema.gov/openfema-data-page/fima-nfip-redacted-claims-v2)
