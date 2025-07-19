@@ -3,3 +3,4 @@
 
 # files too large for GitHub
 data/NfipCommunityLayer*
+data/*.gdb*
