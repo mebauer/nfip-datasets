@@ -23,7 +23,7 @@ The NFIP Claims and Policies datasets are among the most widely used resources p
 If you're only interested in a few counties, it's more efficient to use the OpenFEMA API to retrieve just the data you need. The snippet below shows a simplified version of a function that fetches paginated NFIP data for a given county using the OpenFEMA API.
 
 <details>
-<summary>Here's a snippet of: <code>fetch_nfip_data()</code></summary>
+<summary>Here's a snippet of: <code>fetch_nfip_data()</code> Expand arrow.</summary>
 
 ```python
 # constants
