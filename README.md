@@ -1,4 +1,4 @@
-# How to Download NFIP Datasets from OpenFEMA
+# How to Effectively Download NFIP Datasets from OpenFEMA
 Author: Mark Bauer
 
 # Overview
@@ -17,17 +17,10 @@ This tutorial uses the Federal Emergency Management Agency’s OpenFEMA API, but
 
 Read more about OpenFEMA's [Terms and Conditions](https://www.fema.gov/about/openfema/terms-conditions).
 
-# Datasets
-- [FIMA NFIP Redacted Claims - v2](https://www.fema.gov/openfema-data-page/fima-nfip-redacted-claims-v2)
-- [FIMA NFIP Redacted Policies - v2](https://www.fema.gov/openfema-data-page/fima-nfip-redacted-policies-v2)
-- [NFIP Multiple Loss Properties - v1](https://www.fema.gov/openfema-data-page/nfip-multiple-loss-properties-v1)
-- [NFIP Residential Penetration Rates - v1](https://www.fema.gov/openfema-data-page/nfip-residential-penetration-rates-v1)
-- [2023 NFIP Reinsurance Placement Information](https://www.fema.gov/about/openfema/data-sets/national-flood-insurance-program-nfip-reinsurance-placement-information)
-- [NFIP Community Layer Comprehensive - v1](https://www.fema.gov/openfema-data-page/nfip-community-layer-comprehensive-v1)
-- [NFIP Community Layer No Overlaps Split - v1](https://www.fema.gov/openfema-data-page/nfip-community-layer-no-overlaps-split-v1)
-- [NFIP Community Layer No Overlaps Whole - v1](https://www.fema.gov/openfema-data-page/nfip-community-layer-no-overlaps-whole-v1)
-- [NFIP Community Status Book - v1](https://www.fema.gov/openfema-data-page/nfip-community-status-book-v1)
+# OpenFEMA API and the NFIP Claims and Policies Datasets
+The NFIP Claims and Policies datasets are among the most widely used resources provided by OpenFEMA. However, these files are often very large, and bulk downloads can require significant storage and processing time.
 
+If you're only interested in a few counties, it's more efficient to use the OpenFEMA API to retrieve just the data you need. The snippet below shows a simplified version of a function that fetches paginated NFIP data for a given county using the OpenFEMA API.
 
 <details>
 <summary>Here's a snippet of: <code>fetch_nfip_data()</code></summary>
@@ -85,8 +78,20 @@ def fetch_nfip_data(dataset, fips, outpath=".", sleep_secs=2.0):
     ...   
 ```
 </details>
+
+Refer to the full function inside the [download-examples](https://github.com/mebauer/nfip-datasets/blob/main/download-examples.ipynb) notebook.
+
+# Datasets
+- [FIMA NFIP Redacted Claims - v2](https://www.fema.gov/openfema-data-page/fima-nfip-redacted-claims-v2)
+- [FIMA NFIP Redacted Policies - v2](https://www.fema.gov/openfema-data-page/fima-nfip-redacted-policies-v2)
+- [NFIP Multiple Loss Properties - v1](https://www.fema.gov/openfema-data-page/nfip-multiple-loss-properties-v1)
+- [NFIP Residential Penetration Rates - v1](https://www.fema.gov/openfema-data-page/nfip-residential-penetration-rates-v1)
+- [2023 NFIP Reinsurance Placement Information](https://www.fema.gov/about/openfema/data-sets/national-flood-insurance-program-nfip-reinsurance-placement-information)
+- [NFIP Community Layer Comprehensive - v1](https://www.fema.gov/openfema-data-page/nfip-community-layer-comprehensive-v1)
+- [NFIP Community Layer No Overlaps Split - v1](https://www.fema.gov/openfema-data-page/nfip-community-layer-no-overlaps-split-v1)
+- [NFIP Community Layer No Overlaps Whole - v1](https://www.fema.gov/openfema-data-page/nfip-community-layer-no-overlaps-whole-v1)
+- [NFIP Community Status Book - v1](https://www.fema.gov/openfema-data-page/nfip-community-status-book-v1)
    
-    
 # Additional Resources
 - [OpenFEMA](https://www.fema.gov/about/reports-and-data/openfema)
 - [OpenFEMA Datasets](https://www.fema.gov/about/openfema/data-sets)
