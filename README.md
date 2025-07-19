@@ -108,7 +108,7 @@ for fips in fips_list:
     fetch_nfip_data(dataset, fips, outpath)
 ```
 
-Refer to the full function inside the [download-examples](https://github.com/mebauer/nfip-datasets/blob/main/download-examples.ipynb) notebook. Note: We download data as Parquet files for performance. With DuckDB, these can easily be converted to CSV.
+Refer to the full function inside the [download-examples](https://github.com/mebauer/nfip-datasets/blob/main/download-examples.ipynb) notebook. Note: We download data as Parquet files for performance. With DuckDB, these can easily be converted to CSV. Please refer to the [parquet-to-csv](https://github.com/mebauer/nfip-datasets/blob/main/parquet-to-csv.ipynb) notebook.
 
 # 📂 Available Datasets
 - [FIMA NFIP Redacted Claims - v2](https://www.fema.gov/openfema-data-page/fima-nfip-redacted-claims-v2)
