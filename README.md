@@ -30,9 +30,7 @@ Read more about OpenFEMA's [Terms and Conditions](https://www.fema.gov/about/ope
 
 
 <details>
-<summary>📄 Click to view full source code: <code>fetch_nfip_data()</code></summary>
-
-<div style="max-height: 500px; overflow: auto; border: 1px solid #ddd; padding: 10px; margin-top: 10px;">
+<summary>Here's a snippet of: <code>fetch_nfip_data()</code></summary>
 
 ```python
 # constants
@@ -83,54 +81,12 @@ def fetch_nfip_data(dataset, fips, outpath=".", sleep_secs=2.0):
                 response = requests.get(url, timeout=60)
                 response.raise_for_status()
                 with open(page_path, "wb") as f:
-                    for chunk in response.iter_content(chunk_size=8192):
-                        f.write(chunk)
-            except Exception as e:
-                logging.error(f"Request failed at skip={skip}: {e}")
-                raise
-
-            try:
-                con = duckdb.connect()
-                result = con.execute(f"SELECT COUNT(*) FROM read_parquet('{page_path}')").fetchone()
-                page_count = result[0]
-                con.close()
-            except Exception as e:
-                logging.error(f"Parquet read failed at skip={skip}: {e}")
-                os.remove(page_path)
-                raise
-
-            if page_count == 0:
-                logging.info(f"No more data returned at skip={skip}. Ending.")
-                os.remove(page_path)
-                break
-
-            total_records += page_count
-            logging.info(f"Page loaded: {page_count} records")
-
-            if page_count < PAGE_SIZE:
-                logging.info("Final page detected.")
-                break
-
-            skip += PAGE_SIZE
-            time.sleep(sleep_secs)
-
-        if total_records > 0:
-            try:
-                con = duckdb.connect()
-                input_glob = os.path.join(tmpdir, "*.parquet")
-                con.execute(f"""
-                    COPY (SELECT * FROM read_parquet('{input_glob}'))
-                    TO '{output_file}' (FORMAT PARQUET)
-                """)
-                logging.info(f"Wrote {total_records:,} records to {output_file}")
-                con.close()
-            except Exception as e:
-                logging.error(f"Failed to write output Parquet: {e}")
-                raise
-        else:
-            logging.warning("No data fetched. Nothing saved.")
-</div> </details>```
-
+    
+    ...   
+```
+</details>
+   
+    
 # Additional Resources
 - [OpenFEMA](https://www.fema.gov/about/reports-and-data/openfema)
 - [OpenFEMA Datasets](https://www.fema.gov/about/openfema/data-sets)
