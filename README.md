@@ -1,4 +1,4 @@
-# 📥 Download NFIP Datasets with OpenFEMA API
+# 📥 Downloading National Flood Insurance Program (NFIP) Datasets with OpenFEMA API
 Author: Mark Bauer
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
