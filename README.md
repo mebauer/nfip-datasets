@@ -86,7 +86,7 @@ To download data, simply call the `fetch_nfip_data()` function and pass in your 
 The example below downloads NFIP **Claims** data for the five counties that make up 🗽 New York City:
 
 ```python
-# specify Couny FIPS codes
+# specify County FIPS codes
 fips_list = [
     "36005", # Bronx
     "36047", # Kings (Brooklyn)
